@@ -14,4 +14,45 @@ print("==========================================")
 expenses = []
 total_spent = 0
 
+for i in range(1, 5):
+    print("--- EXPENSE {} ---".format(i))
+    
+    while True:
+        cat_num = int(input("Category (0 to skip): "))
+        
+        if cat_num == 0:
+            category_name = "Skip"
+            break
+        elif cat_num == 1:
+            category_name = "Food & Drinks"
+            break
+        elif cat_num == 2:
+            category_name = "Transportation"
+            break
+        elif cat_num == 3:
+            category_name = "Mobile / Internet"
+            break
+        elif cat_num == 4:
+            category_name = "School Supplies"
+            break
+        elif cat_num == 5:
+            category_name = "Entertainment"
+            break
+        else:
+            print("Invalid category. Please choose 0 to 5.")
+
+    if cat_num == 0:
+        continue
+
+    desc = input("Description: ")
+    amount = int(input("Amount: "))
+    
+    alert = ""
+    if amount > (budget * 0.25):
+        alert = " ! High Expense Alert!"
+    
+    expenses.append([category_name, desc, amount, alert])
+    total_spent = total_spent + amount
+
+remaining = budget - total_spent
 
