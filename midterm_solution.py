@@ -55,4 +55,25 @@ for i in range(1, 5):
     total_spent = total_spent + amount
 
 remaining = budget - total_spent
+print("======================================================")
+print("     {} -- WEEKLY EXPENSE LOG".format(name.upper()))
+print("======================================================")
+print("  Weekly Budget  : P{}".format(budget))
+
+count = 1
+for item in expenses:
+    print("  [{}] {}".format(count, item[0]))
+    print("      {}              P{}{}".format(item[1], item[2], item[3]))
+    count = count + 1
+
+print("------------------------------------------------------")
+print("  Total Spent    : P{}".format(total_spent))
+print("  Remaining      : P{}".format(remaining))
+
+if remaining >= 0:
+    print("  Status         : Budget OK! Keep it up.")
+else:
+    print("  Status         : Over Budget! Be careful.")
+print("======================================================")
+
 
